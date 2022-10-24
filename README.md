@@ -57,5 +57,5 @@
   - [Touch Image View](https://github.com/MikeOrtiz/TouchImageView)
   
 # License
-Zeta Shop is licensed under the [MIT License](https://github.com/drake-ho-goldenowl/E-Commerce-Application/blob/main/LICENSE) 
+Zeta Shop is licensed under the [MIT License](https://github.com/Catelt/E-Commerce-Application/blob/main/LICENSE) 
   
