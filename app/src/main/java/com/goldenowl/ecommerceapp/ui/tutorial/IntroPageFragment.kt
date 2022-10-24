@@ -1,35 +1,27 @@
 package com.goldenowl.ecommerceapp.ui.tutorial
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.goldenowl.ecommerceapp.core.BaseFragment
 import com.goldenowl.ecommerceapp.databinding.FragmentIntroPageBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class IntroPageFragment(img: Int = 0, nameTopic: String = "") : Fragment() {
+class IntroPageFragment(img: Int = 0, nameTopic: String = "") : BaseFragment<FragmentIntroPageBinding>(
+    FragmentIntroPageBinding::inflate
+) {
     private var _img = img
     private var _nameTopic = nameTopic
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun setUpArgument(bundle: Bundle) {
         arguments?.apply {
             _img =  getInt(IMG)
             _nameTopic = getString(TITLE) ?: _nameTopic
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val binding = FragmentIntroPageBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+    override fun setUpViews() {
         binding.txtIntro.text = _nameTopic
         binding.imgIntro.setImageResource(_img)
-        return binding.root
     }
 
     companion object{
