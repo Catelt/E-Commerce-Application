@@ -6,7 +6,7 @@
     app:startDestination="@id/signUpFragment">
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Auth.SignUpFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.auth.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Auth.LoginFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Auth.ForgotPasswordFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.auth.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
 </navigation>

@@ -3,7 +3,7 @@ package com.goldenowl.ecommerceapp.utilities
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.goldenowl.ecommerceapp.ui.General.NoInternetActivity
+import com.goldenowl.ecommerceapp.ui.general.NoInternetActivity
 
 class NetworkChangeReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

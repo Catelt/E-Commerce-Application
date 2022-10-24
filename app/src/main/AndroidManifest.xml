@@ -47,8 +47,8 @@
                     android:scheme="https"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.Auth.AuthActivity" />
-        <activity android:name=".ui.General.NoInternetActivity" />
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity android:name=".ui.general.NoInternetActivity" />
         <activity android:name=".ui.chat.HomeChatActivity" />
 
         <meta-data

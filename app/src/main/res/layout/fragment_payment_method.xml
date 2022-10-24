@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.PaymentMethod.PaymentMethodFragment">
+    tools:context=".ui.paymentmethod.PaymentMethodFragment">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -43,7 +43,7 @@
             android:id="@+id/btnAddShippingAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/margin_default"
             android:backgroundTint="@color/black"
             android:elevation="@dimen/elevation_default"

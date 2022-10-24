@@ -1,7 +1,7 @@
 package com.goldenowl.ecommerceapp.data
 
 import androidx.lifecycle.MutableLiveData
-import com.goldenowl.ecommerceapp.ui.Promotion.FilterPromotion
+import com.goldenowl.ecommerceapp.ui.promotion.FilterPromotion
 import com.goldenowl.ecommerceapp.utilities.PROMOTION_FIREBASE
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject

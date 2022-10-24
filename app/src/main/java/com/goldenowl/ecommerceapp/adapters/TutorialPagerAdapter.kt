@@ -3,7 +3,7 @@ package com.goldenowl.ecommerceapp.adapters
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.goldenowl.ecommerceapp.R
-import com.goldenowl.ecommerceapp.ui.Tutorial.IntroPageFragment
+import com.goldenowl.ecommerceapp.ui.tutorial.IntroPageFragment
 
 
 const val INTRODUCTION_1 = 0

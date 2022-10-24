@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ShippingAddress.AddShippingAddressFragment">
+    tools:context=".ui.shippingaddress.AddShippingAddressFragment">
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -182,7 +182,6 @@
                     android:layout_marginStart="@dimen/margin_default"
                     android:layout_marginTop="40dp"
                     android:layout_marginEnd="@dimen/margin_default"
-                    android:layout_marginBottom="@dimen/below_distance"
                     android:text="@string/save_address"
                     android:textAllCaps="true" />
 

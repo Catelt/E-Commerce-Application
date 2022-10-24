@@ -1,15 +1,14 @@
 package com.goldenowl.ecommerceapp
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
+import com.goldenowl.ecommerceapp.core.BaseFragment
 import com.goldenowl.ecommerceapp.databinding.ActivityMainBinding
-import com.goldenowl.ecommerceapp.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.fragments.forEach { fragment ->
                 if (fragment is NavHostFragment) {
                     fragment.childFragmentManager.fragments.forEach { childFragment ->
-                        if (childFragment is BaseFragment) {
+                        if (childFragment is BaseFragment<*>) {
                             handled = childFragment.onBackPressed()
                             if (handled) {
                                 return
@@ -54,23 +53,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNavMenu(navController: NavController) {
         binding.bottomNavigation.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.homeFragment,
-                R.id.shopFragment,
-                R.id.bagFragment,
-                R.id.favoritesFragment,
-                R.id.profileFragment,
-                R.id.catalogFragment,
-                R.id.warningFragment,
-                R.id.profileNoLoginFragment,
-                R.id.profileLoginFragment,
-                R.id.ordersFragment,
-                -> binding.bottomNavigation.visibility = View.VISIBLE
-                else -> binding.bottomNavigation.visibility = View.GONE
-            }
-        }
-
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             NavigationUI.onNavDestinationSelected(item, navController)
             navController.popBackStack(item.itemId, inclusive = false)

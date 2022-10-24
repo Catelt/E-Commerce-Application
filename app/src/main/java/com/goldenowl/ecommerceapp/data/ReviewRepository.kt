@@ -1,7 +1,7 @@
 package com.goldenowl.ecommerceapp.data
 
 import androidx.lifecycle.MutableLiveData
-import com.goldenowl.ecommerceapp.ui.ReviewRating.FilterReview
+import com.goldenowl.ecommerceapp.ui.reviewrating.FilterReview
 import com.goldenowl.ecommerceapp.utilities.ID_USER
 import com.goldenowl.ecommerceapp.utilities.REVIEW_FIREBASE
 import com.google.firebase.firestore.FirebaseFirestore
