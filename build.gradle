@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+        classpath 'com.google.gms:google-services:4.3.14'
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.42'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.2"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+}
+
+static def getVersionName() {
+    def result = "git rev-list --first-parent --count main".execute().text.trim() //unix
+    if (result.empty) result = "1"
+    return result.toInteger()
+}
+
+static def getVersionCode() {
+    def result = "git rev-list HEAD --count".execute().text.trim() //unix
+    if (result.empty) result = "1"
+    return result.toInteger()
+}
+
+ext {
+    versionCode = getVersionCode()
+    versionName = getVersionName()
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_round_corner2"
+    android:backgroundTint="@color/grey2"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/imgDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@string/image"
+        android:src="@drawable/rectangle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="32dp"
+        android:text="@string/choose_your_country"
+        android:textSize="@dimen/size_title"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editPromoCode" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_default"
+        android:paddingTop="32dp"
+        android:paddingEnd="@dimen/margin_default"
+        android:paddingBottom="10dp">
+
+        <EditText
+            android:id="@+id/editTextCountry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_edit_text"
+            android:autofillHints="false"
+            android:background="@drawable/edit_txt_custom"
+            android:elevation="@dimen/elevation_default"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_sub_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="-40dp"
+            android:background="@drawable/ic_search"
+            android:contentDescription="@string/image"
+            android:elevation="25dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCountry"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:paddingTop="5dp" />
+</LinearLayout>
