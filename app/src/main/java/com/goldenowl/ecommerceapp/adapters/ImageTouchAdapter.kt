@@ -2,7 +2,7 @@ package com.goldenowl.ecommerceapp.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.goldenowl.ecommerceapp.ui.LargeImage.ViewPageImageTouch
+import com.goldenowl.ecommerceapp.ui.largeimage.ViewPageImageTouch
 
 class ImageTouchAdapter(private val fragment: Fragment, private val listImage: List<String>) :
     FragmentStateAdapter(fragment) {
@@ -11,7 +11,7 @@ class ImageTouchAdapter(private val fragment: Fragment, private val listImage: L
         return listImage.size
     }
 
-    override fun createFragment(position: Int): Fragment {
+    override fun createFragment(position: Int): ViewPageImageTouch {
         listFragment.add(ViewPageImageTouch(listImage[position]))
         return listFragment.last()
     }

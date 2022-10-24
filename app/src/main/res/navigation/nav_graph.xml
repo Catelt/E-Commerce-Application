@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Home.HomeFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/shopFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Shop.ShopFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.shop.ShopFragment"
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/bagFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Bag.BagFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.bag.BagFragment"
         android:label="fragment_bag"
         tools:layout="@layout/fragment_bag">
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Favorite.FavoritesFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.favorite.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites">
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Profile.ProfileFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile">
         <action
@@ -76,17 +76,17 @@
     </fragment>
     <fragment
         android:id="@+id/profileLoginFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Profile.ProfileLoginFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.profile.ProfileLoginFragment"
         android:label="fragment_profile_login"
         tools:layout="@layout/fragment_profile_login" />
     <fragment
         android:id="@+id/profileNoLoginFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Profile.ProfileNoLoginFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.profile.ProfileNoLoginFragment"
         android:label="fragment_profile_no_login"
         tools:layout="@layout/fragment_profile_no_login" />
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Shop.CatalogFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.shop.CatalogFragment"
         android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog">
         <argument
@@ -107,12 +107,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Setting.SettingFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.setting.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/productDetailFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Shop.ProductDetailFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.shop.ProductDetailFragment"
         android:label="fragment_product_detail"
         tools:layout="@layout/fragment_product_detail">
         <argument
@@ -124,17 +124,17 @@
     </fragment>
     <fragment
         android:id="@+id/warningFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.General.WarningFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.general.WarningFragment"
         android:label="fragment_warning"
         tools:layout="@layout/fragment_warning" />
     <fragment
         android:id="@+id/viewPageTutorialFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Tutorial.ViewPageTutorialFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.tutorial.ViewPageTutorialFragment"
         android:label="fragment_view_page_tutorial"
         tools:layout="@layout/fragment_view_page_tutorial" />
     <fragment
         android:id="@+id/ratingProductFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.ReviewRating.RatingProductFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.reviewrating.RatingProductFragment"
         android:label="fragment_rating_product"
         tools:layout="@layout/fragment_rating_product">
         <argument
@@ -143,12 +143,12 @@
     </fragment>
     <fragment
         android:id="@+id/checkoutFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Checkout.CheckoutFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.checkout.CheckoutFragment"
         android:label="fragment_checkout"
         tools:layout="@layout/fragment_checkout"/>
     <fragment
         android:id="@+id/addShippingAddressFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.ShippingAddress.AddShippingAddressFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.shippingaddress.AddShippingAddressFragment"
         android:label="fragment_add_shipping_address"
         tools:layout="@layout/fragment_add_shipping_address">
         <argument
@@ -158,7 +158,7 @@
     </fragment>
     <fragment
         android:id="@+id/shippingAddressFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.ShippingAddress.ShippingAddressFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.shippingaddress.ShippingAddressFragment"
         android:label="fragment_shipping_address"
         tools:layout="@layout/fragment_shipping_address">
         <action
@@ -167,27 +167,27 @@
     </fragment>
     <fragment
         android:id="@+id/paymentMethodFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.PaymentMethod.PaymentMethodFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.paymentmethod.PaymentMethodFragment"
         android:label="fragment_payment_method"
         tools:layout="@layout/fragment_payment_method" />
     <fragment
         android:id="@+id/successFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Checkout.SuccessFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.checkout.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" />
     <fragment
         android:id="@+id/ordersFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Order.OrdersFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.order.OrdersFragment"
         android:label="fragment_orders"
         tools:layout="@layout/fragment_orders" />
     <fragment
         android:id="@+id/orderDetailFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Order.OrderDetailFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.order.OrderDetailFragment"
         android:label="fragment_order_detail"
         tools:layout="@layout/fragment_order_detail" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Search.SearchFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search">
         <action
@@ -198,7 +198,7 @@
     </fragment>
     <fragment
         android:id="@+id/qrScanFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.QrScan.QrScanFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.qrscan.QrScanFragment"
         android:label="fragment_qr_scan"
         tools:layout="@layout/fragment_qr_scan">
         <action
@@ -214,27 +214,27 @@
     </fragment>
     <fragment
         android:id="@+id/allowCameraFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.QrScan.AllowCameraFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.qrscan.AllowCameraFragment"
         android:label="fragment_allow_camera"
         tools:layout="@layout/fragment_allow_camera" />
     <fragment
         android:id="@+id/promoListFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.Promotion.PromoListFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.promotion.PromoListFragment"
         android:label="fragment_promo_list"
         tools:layout="@layout/fragment_promo_list" />
     <fragment
         android:id="@+id/reviewListFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.ReviewRating.ReviewListFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.reviewrating.ReviewListFragment"
         android:label="fragment_review_list"
         tools:layout="@layout/fragment_review_list" />
     <fragment
         android:id="@+id/noInternetFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.General.NoInternetFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.general.NoInternetFragment"
         android:label="fragment_no_internet"
         tools:layout="@layout/fragment_no_internet" />
     <fragment
         android:id="@+id/largeImageFragment"
-        android:name="com.goldenowl.ecommerceapp.ui.LargeImage.LargeImageFragment"
+        android:name="com.goldenowl.ecommerceapp.ui.largeimage.LargeImageFragment"
         android:label="fragment_large_image"
         tools:layout="@layout/fragment_large_image" />
 </navigation>

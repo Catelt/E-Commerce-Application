@@ -15,8 +15,7 @@
     <dimen name="height_toolbar_expand">110dp</dimen>
     <dimen name="size_text_small">11sp</dimen>
     <dimen name="size_icon">24dp</dimen>
-    <dimen name="below_distance">80dp</dimen>
-    <dimen name="height_layout_bag">260dp</dimen>
+    <dimen name="height_layout_bag">180dp</dimen>
     <dimen name="size_progressbar">80dp</dimen>
     <dimen name="elevation_default_2">25dp</dimen>
     <dimen name="height_toolbar_home">196dp</dimen>

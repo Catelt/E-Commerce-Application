@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Profile.ProfileLoginFragment">
+    tools:context=".ui.profile.ProfileLoginFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -389,7 +389,6 @@
                     android:layout_marginStart="@dimen/margin_default"
                     android:layout_marginTop="34dp"
                     android:layout_marginEnd="@dimen/margin_default"
-                    android:layout_marginBottom="@dimen/below_distance"
                     android:background="@drawable/btn_custom"
                     android:text="@string/logout" />
 

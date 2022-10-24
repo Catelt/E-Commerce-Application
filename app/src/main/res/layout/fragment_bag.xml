@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Bag.BagFragment">
+    android:background="@color/grey2"
+    tools:context=".ui.bag.BagFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -51,7 +52,7 @@
                 android:layout_height="@dimen/height_button"
                 android:layout_marginStart="@dimen/margin_default"
                 android:layout_marginEnd="@dimen/margin_default"
-                android:layout_marginBottom="@dimen/below_distance"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/btn_custom"
                 android:gravity="center"
                 android:text="@string/check_out"

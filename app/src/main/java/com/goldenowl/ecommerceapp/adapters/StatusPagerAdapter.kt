@@ -2,7 +2,7 @@ package com.goldenowl.ecommerceapp.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.goldenowl.ecommerceapp.ui.Order.ItemListOrder
+import com.goldenowl.ecommerceapp.ui.order.ItemListOrder
 
 
 class StatusPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
