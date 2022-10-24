@@ -44,9 +44,6 @@ jobs:
         run: echo ${{secrets.KEY_PROPERTIES}} | base64 -d > key.properties
 
       - name: Key Properties
-        run: echo ${{secrets.GOOGLE_SERVICE}} | base64 -d > app/google-services.json
-
-      - name: Key Properties
         run: echo ${{secrets.KEY_FIREBASE}} | base64 -d > app/src/main/res/values/key.xml
 
       - name: Execute Gradle build
