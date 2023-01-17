@@ -16,11 +16,11 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
     defaultConfig {
         applicationId "com.goldenowl.ecommerceapp"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode rootProject.versionCode
         versionName "1.${rootProject.versionName}.${rootProject.versionCode - rootProject.versionName}"
 
@@ -55,16 +55,16 @@ android {
 
 dependencies {
     def nav_version = "2.5.1"
-    def room_version = "2.4.3"
+    def room_version = "2.5.0"
 
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     testImplementation 'junit:junit:4.13.2'
 
     // Firebase
@@ -85,7 +85,7 @@ dependencies {
 
     //Facebook Google
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
 
@@ -108,7 +108,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$nav_version"
 
     //Glide
-    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
 
     //Flash screen
     implementation 'androidx.core:core-splashscreen:1.0.0'
@@ -126,7 +126,7 @@ dependencies {
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
 
     //Gson
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10'
 
     //ImageView Touch
     implementation 'com.github.MikeOrtiz:TouchImageView:1.4.1'
