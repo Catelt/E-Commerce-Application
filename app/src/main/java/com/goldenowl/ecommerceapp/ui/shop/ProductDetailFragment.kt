@@ -20,7 +20,10 @@ import com.goldenowl.ecommerceapp.data.Product
 import com.goldenowl.ecommerceapp.databinding.FragmentProductDetailBinding
 import com.goldenowl.ecommerceapp.ui.bag.BottomSheetCart
 import com.goldenowl.ecommerceapp.ui.favorite.BottomSheetFavorite
-import com.goldenowl.ecommerceapp.utilities.*
+import com.goldenowl.ecommerceapp.utilities.BUNDLE_KEY_IS_FAVORITE
+import com.goldenowl.ecommerceapp.utilities.ID_PRODUCT
+import com.goldenowl.ecommerceapp.utilities.NetworkHelper
+import com.goldenowl.ecommerceapp.utilities.REQUEST_KEY
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -119,9 +122,6 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>(
             MaterialToolbar.setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.btnShare -> {
-                        DynamicLink.createDynamicLinkProduct(idProduct) { link ->
-                            share(link)
-                        }
                         false
                     }
                     else -> false
