@@ -5,7 +5,6 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.facebook.login.LoginManager
 import com.goldenowl.ecommerceapp.MainActivity
 import com.goldenowl.ecommerceapp.R
 import com.goldenowl.ecommerceapp.core.BaseFragment
@@ -51,17 +50,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
                     }
                 })
             }
-            btnFacebook.setOnClickListener {
-                LoginManager.getInstance()
-                    .logInWithReadPermissions(
-                        requireActivity(), viewModel.callbackManager, listOf(
-                            AuthViewModel.PUBLIC_PROFILE,
-                            AuthViewModel.EMAIL,
-                            AuthViewModel.USER_FRIEND
-                        )
-                    )
-                viewModel.loginWithFacebook()
-            }
 
             btnForgetPassword.setOnClickListener {
                 findNavController().navigate(R.id.forgotPasswordFragment)
@@ -100,7 +88,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(
 
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        viewModel.callbackManager.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_SIGN_IN && resultCode == Activity.RESULT_OK && data != null) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
