@@ -2,12 +2,6 @@ package com.goldenowl.ecommerceapp.ui.auth
 
 import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
-import com.facebook.AccessToken
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
-import com.facebook.login.LoginManager
-import com.facebook.login.LoginResult
 import com.goldenowl.ecommerceapp.core.BaseViewModel
 import com.goldenowl.ecommerceapp.core.OnSignInStartedListener
 import com.goldenowl.ecommerceapp.data.User
@@ -17,7 +11,6 @@ import com.goldenowl.ecommerceapp.utilities.DateFormat
 import com.goldenowl.ecommerceapp.utilities.Hash
 import com.goldenowl.ecommerceapp.utilities.USER_FIREBASE
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -25,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 @HiltViewModel
@@ -40,7 +33,6 @@ class AuthViewModel @Inject constructor(
     val validNameLiveData: MutableLiveData<String> = MutableLiveData()
     val validEmailLiveData: MutableLiveData<String> = MutableLiveData()
     val validPasswordLiveData: MutableLiveData<String> = MutableLiveData()
-    val callbackManager: CallbackManager = CallbackManager.Factory.create()
     var remain = 3
     private val tokenDevice = MutableLiveData("")
     val isBlock = MutableLiveData(false)
@@ -241,42 +233,6 @@ class AuthViewModel @Inject constructor(
             }
         }
     }
-
-    // FaceBook
-    fun loginWithFacebook() {
-        LoginManager.getInstance()
-            .registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
-                override fun onSuccess(result: LoginResult) {
-                    handleFacebookAccessToken(result.accessToken)
-                }
-
-                override fun onCancel() {
-                    toastMessage.postValue("facebook:onCancel")
-                }
-
-                override fun onError(error: FacebookException) {
-                    toastMessage.postValue("facebook:onError")
-                }
-            })
-    }
-
-    private fun handleFacebookAccessToken(token: AccessToken) {
-        isLoading.postValue(true)
-        val credential = FacebookAuthProvider.getCredential(token.token)
-        firebaseAuth.signInWithCredential(credential)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val user = firebaseAuth.currentUser
-                    user?.let {
-                        actionLoginOrCreateFirebase(user, null)
-                    }
-                } else {
-                    checkFail(task.exception?.message.toString())
-                    isLoading.postValue(false)
-                }
-            }
-    }
-
 
     private fun createNewUserManagerForLoginSocial(user: FirebaseUser) {
         val dob = Date()

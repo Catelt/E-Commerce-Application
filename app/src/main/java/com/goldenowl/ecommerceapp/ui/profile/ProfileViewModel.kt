@@ -2,9 +2,13 @@ package com.goldenowl.ecommerceapp.ui.profile
 
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.facebook.login.LoginManager
 import com.goldenowl.ecommerceapp.core.BaseViewModel
-import com.goldenowl.ecommerceapp.data.*
+import com.goldenowl.ecommerceapp.data.Card
+import com.goldenowl.ecommerceapp.data.OrderRepository
+import com.goldenowl.ecommerceapp.data.PaymentRepository
+import com.goldenowl.ecommerceapp.data.ReviewRepository
+import com.goldenowl.ecommerceapp.data.ShippingAddressRepository
+import com.goldenowl.ecommerceapp.data.UserManager
 import com.goldenowl.ecommerceapp.utilities.GlideDefault
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
@@ -69,8 +73,6 @@ class ProfileViewModel @Inject constructor(
         userManager.logOut()
         //Google SignOut
         googleSignInClient.signOut()
-        //Facebook SignOut
-        LoginManager.getInstance().logOut();
     }
 
     fun getAvatar(): String {
