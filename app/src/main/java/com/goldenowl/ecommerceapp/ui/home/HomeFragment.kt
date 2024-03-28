@@ -1,7 +1,6 @@
 package com.goldenowl.ecommerceapp.ui.home
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -20,10 +19,12 @@ import com.goldenowl.ecommerceapp.core.BaseFragment
 import com.goldenowl.ecommerceapp.data.Product
 import com.goldenowl.ecommerceapp.databinding.FragmentHomeBinding
 import com.goldenowl.ecommerceapp.ui.favorite.BottomSheetFavorite
-import com.goldenowl.ecommerceapp.utilities.*
-import com.google.firebase.dynamiclinks.PendingDynamicLinkData
-import com.google.firebase.dynamiclinks.ktx.dynamicLinks
-import com.google.firebase.ktx.Firebase
+import com.goldenowl.ecommerceapp.utilities.BUNDLE_KEY_IS_FAVORITE
+import com.goldenowl.ecommerceapp.utilities.IS_FIRST
+import com.goldenowl.ecommerceapp.utilities.NEW
+import com.goldenowl.ecommerceapp.utilities.NetworkHelper
+import com.goldenowl.ecommerceapp.utilities.REQUEST_KEY
+import com.goldenowl.ecommerceapp.utilities.SALE
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -64,7 +65,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
             findNavController().navigate(R.id.viewPageTutorialFragment)
         }
         viewModel.isLoading.postValue(true)
-        getDynamicLinkFromFirebase()
         setFragmentListener()
     }
 
@@ -173,23 +173,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
                 }
             }
         }
-    }
-
-    private fun getDynamicLinkFromFirebase() {
-        Firebase.dynamicLinks
-            .getDynamicLink(requireActivity().intent)
-            .addOnSuccessListener(requireActivity()) { pendingDynamicLinkData: PendingDynamicLinkData? ->
-                var deepLink: Uri? = null
-                if (pendingDynamicLinkData != null) {
-                    deepLink = pendingDynamicLinkData.link
-                }
-                if (deepLink.toString().contains(PRODUCT_FIREBASE)) {
-                    val action = HomeFragmentDirections.actionHomeFragmentToProductDetailFragment(
-                        idProduct = deepLink.toString().replace(BASE_LINK_PRODUCT, "")
-                    )
-                    findNavController().navigate(action)
-                }
-            }
     }
 
     private fun setupScroll() {
