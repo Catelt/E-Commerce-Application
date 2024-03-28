@@ -392,6 +392,18 @@
                     android:background="@drawable/btn_custom"
                     android:text="@string/logout" />
 
+                <TextView
+                    android:id="@+id/btnDeleteAccount"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:layout_height="@dimen/height_button"
+                    android:layout_marginStart="@dimen/margin_default"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="@dimen/margin_default"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/delete_account" />
+
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 

@@ -126,6 +126,10 @@
     <string name="policy">Policy</string>
     <string name="policy_term_of_service"><![CDATA[Policy & Term of service]]></string>
     <string name="logout">Logout</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete_account_content">"Are you sure you want to Delete?"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="hello">Hello</string>
     <string name="sign_in_to_shop_more_easily_and_enjoy_many_promotions">Sign in to shop more easily\nand enjoy many promotions</string>
     <string name="scan_qr_code_nto_find_products_faster">Scan QR Code\nto find products faster</string>

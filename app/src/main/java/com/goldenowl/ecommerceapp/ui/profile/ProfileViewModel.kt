@@ -2,6 +2,7 @@ package com.goldenowl.ecommerceapp.ui.profile
 
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.viewModelScope
 import com.goldenowl.ecommerceapp.core.BaseViewModel
 import com.goldenowl.ecommerceapp.data.Card
 import com.goldenowl.ecommerceapp.data.OrderRepository
@@ -14,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,6 +33,8 @@ class ProfileViewModel @Inject constructor(
     val payment = paymentRepository.card
     val totalOrder = orderRepository.totalOrder
     val reviews = reviewRepository.reviews
+    val isLogged = MutableStateFlow(userManager.isLogged())
+
     fun setupProfileUI(
         fragment: Fragment,
         name: TextView,
@@ -69,10 +74,22 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun logOut() {
+        isLoading.postValue(true)
         firebaseAuth.signOut()
         userManager.logOut()
         //Google SignOut
         googleSignInClient.signOut()
+        isLoading.postValue(false)
+        viewModelScope.launch {
+            isLogged.emit(userManager.isLogged())
+        }
+    }
+
+    fun deleteAccount(){
+        isLoading.postValue(true)
+        firebaseAuth.currentUser?.delete()?.addOnSuccessListener {
+            logOut()
+        }
     }
 
     fun getAvatar(): String {

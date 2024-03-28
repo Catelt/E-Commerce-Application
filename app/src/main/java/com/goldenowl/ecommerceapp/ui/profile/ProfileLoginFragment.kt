@@ -1,13 +1,17 @@
 package com.goldenowl.ecommerceapp.ui.profile
 
 import android.content.Intent
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.goldenowl.ecommerceapp.R
 import com.goldenowl.ecommerceapp.core.BaseFragment
 import com.goldenowl.ecommerceapp.databinding.FragmentProfileLoginBinding
 import com.goldenowl.ecommerceapp.ui.auth.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProfileLoginFragment : BaseFragment<FragmentProfileLoginBinding>(
@@ -30,8 +34,22 @@ class ProfileLoginFragment : BaseFragment<FragmentProfileLoginBinding>(
             }
             btnLogout.setOnClickListener {
                 viewModel.logOut()
-                startActivity(Intent(activity, AuthActivity::class.java))
-                activity?.finish()
+            }
+
+            btnDeleteAccount.setOnClickListener {
+                context?.let {
+                    val builder = AlertDialog.Builder(it)
+                    builder.setMessage(getString(R.string.delete_account_content))
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                            viewModel.deleteAccount()
+                        }
+                        .setNegativeButton(getString(R.string.no)) { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                    val alert = builder.create()
+                    alert.show()
+                }
             }
 
             myOrderLayout.setOnClickListener {
@@ -71,6 +89,17 @@ class ProfileLoginFragment : BaseFragment<FragmentProfileLoginBinding>(
             }
             isLoading.observe(viewLifecycleOwner) {
                 setLoading(it)
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.isLogged.collectLatest {
+                activity?.apply {
+                    if (!it) {
+                        startActivity(Intent(activity, AuthActivity::class.java))
+                        finish()
+                    }
+                }
             }
         }
     }
